@@ -2,7 +2,7 @@ require "faraday"
 require "faraday_middleware"
 
 module Ruboty
-  module GoogleImage
+  module TumblrImage
     class Client
       GOOGLE_IMAGE_API_URL = "http://ajax.googleapis.com/ajax/services/search/images"
 
@@ -45,14 +45,14 @@ module Ruboty
 
       def given_params
         {
-          q: options[:query],
+          q: "site:#{options[:username]}.tumblr.com",
+          safe: options[:unsafe] ? "off" : "active",
         }
       end
 
       def default_params
         {
           rsz: 8,
-          safe: "active",
           v: "1.0",
         }
       end

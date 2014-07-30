@@ -1,9 +1,11 @@
-# Ruboty::GoogleImage
-An ruboty handler to search images from Google.
+# Ruboty::TumblrImage
+An ruboty handler to pickup images from Tumblr.
 
 ## Usage
 ```
-@ruboty image <keyword> - Search image from Google
+@ruboty tumblr <username> - Pickup image from Tumblr
+@ruboty tumblr unsafe <username> - Pickup image from Tumblr (unsafe)
 ```
 
-![](https://raw.githubusercontent.com/r7kamura/ruboty-google_image/master/images/screenshot.png)
+## Thanks
+`ruboty-tumblr_image` is forked from [`ruboty-google_image`](https://github.com/r7kamura/ruboty-google_image)

@@ -1,14 +1,14 @@
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "ruboty/google_image/version"
+require "ruboty/tumblr_image/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "ruboty-google_image"
-  spec.version       = Ruboty::GoogleImage::VERSION
-  spec.authors       = ["Ryo Nakamura"]
-  spec.email         = ["r7kamura@gmail.com"]
-  spec.summary       = "An ruboty handler to search images from Google."
-  spec.homepage      = "https://github.com/r7kamura/ruboty-google_image"
+  spec.name          = "ruboty-tumblr_image"
+  spec.version       = Ruboty::TumblrImage::VERSION
+  spec.authors       = ["Sunao Komuro"]
+  spec.email         = ["konbu.komuro@gmail.com"]
+  spec.summary       = "An ruboty handler to pickup images from Tumblr."
+  spec.homepage      = "https://github.com/hogelog/ruboty-tumblr_image"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
