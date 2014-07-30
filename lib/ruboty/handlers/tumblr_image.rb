@@ -1,7 +1,7 @@
 module Ruboty
   module Handlers
     class TumblrImage < Base
-      on /tumblr(?<unsafe> unsafe)?(?<username>.+)/, name: "tumblr", description: "Pickup image from Tumblr"
+      on /tumblr (?<unsafe>unsafe )?(?<username>.+)/, name: "tumblr", description: "Pickup image from Tumblr"
 
       def tumblr(message)
         url = search(message[:username], !!message[:unsafe])
