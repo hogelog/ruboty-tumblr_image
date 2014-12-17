@@ -48,7 +48,10 @@ module Ruboty
 
       def tumblelog
         user = @options[:username]
-        if user.include?(".")
+        case user
+        when /^https?:\/\//
+          URI.parse(user).host
+        when /\./
           user
         else
           "#{user}.tumblr.com"
