@@ -11,7 +11,7 @@ module Ruboty
       private
 
       def search(username, unsafe)
-        Ruboty::TumblrImage::Client.new(username: username, unsafe: unsafe).get
+        Ruboty::TumblrImage::GoogleClient.new(username: username, unsafe: unsafe).get
       end
     end
   end
