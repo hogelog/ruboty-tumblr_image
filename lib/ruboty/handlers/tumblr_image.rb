@@ -11,7 +11,22 @@ module Ruboty
       private
 
       def search(username, unsafe)
-        Ruboty::TumblrImage::Client.new(username: username, unsafe: unsafe).get
+        klass = case ENV['RUBOTY_TUMBLR_CLIENT'] || 'google'
+        when 'google'
+          Ruboty::TumblrImage::GoogleClient   
+        when 'tumblr'
+          Ruboty::TumblrImage::TumblrClient   
+        when 'google+tumblr', 'hybrid'
+          Ruboty::TumblrImage::HybridClient
+        else
+          if ENV['RUBOTY_TUMBLR_API_KEY']
+            Ruboty::TumblrImage::HybridClient
+          else
+            Ruboty::TumblrImage::GoogleClient
+          end
+        end
+
+        klass.new(username: username, unsafe: unsafe).get
       end
     end
   end

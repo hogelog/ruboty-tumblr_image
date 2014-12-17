@@ -3,7 +3,7 @@ require "faraday_middleware"
 
 module Ruboty
   module TumblrImage
-    class Client
+    class GoogleClient
       GOOGLE_IMAGE_API_URL = "http://ajax.googleapis.com/ajax/services/search/images"
 
       attr_reader :options
